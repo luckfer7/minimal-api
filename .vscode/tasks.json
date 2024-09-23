@@ -1,0 +1,32 @@
+// {
+// 	"version": "2.0.0",
+// 	"tasks": [
+// 		{
+// 			"type": "dotnet",
+// 			"task": "build c:\\Users\\lucas\\Desktop\\minimal-api\\minimal-api.csproj",
+// 			"file": "c:\\Users\\lucas\\Desktop\\minimal-api\\minimal-api.csproj",
+// 			"group": "build",
+// 			"problemMatcher": [],
+// 			"label": "dotnet: build c:\\Users\\lucas\\Desktop\\minimal-api\\minimal-api.csproj"
+// 		}
+// 	]
+// }
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "process",
+			"label": "build",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"${workspaceFolder}/minimal-api.csproj"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": "$msCompile"
+		}
+	]
+}
