@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using MinimalApi.Infraestrutura.Db;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddDbContext<DbContexto>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Mama minha piroca mole");
+app.MapGet("/", () => "Mama minha piroca mole e pequena");
 
 
 app.MapPost("/login", (MinimalApi.DTOs.LoginDTO loginDTO) => {
